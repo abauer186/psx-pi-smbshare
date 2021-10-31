@@ -69,9 +69,6 @@ fi
 
 runuser pi -s /bin/bash -c "/usr/bin/pmount --umask 000 --noatime -w --sync /dev/${PART} /media/${PART}"
 
-pkill ps3netsrv++
-/usr/local/bin/ps3netsrv++ -d /media/$PART
-
 #create a new smb share for the mounted drive
 cat <<EOS | sudo tee /etc/samba/smb.conf
 [global]
